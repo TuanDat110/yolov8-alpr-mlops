@@ -1,0 +1,48 @@
+# ==========================================
+# 1. RÁC CỦA PYTHON & MÔI TRƯỜNG
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+alpr_env/
+.env
+
+# ==========================================
+# 2. RÁC CỦA YOLOv8 & ULTRALYTICS
+# ==========================================
+# Bỏ qua toàn bộ thư mục log quá trình train và dự đoán
+runs/
+# Bỏ qua các file trọng số (weights) vì nó rất nặng, đã có MLflow lo
+*.pt
+*.engine
+*.onnx
+# Bỏ qua file cache nhãn dán của YOLO
+*.cache
+
+# ==========================================
+# 3. RÁC CỦA MLFLOW
+# ==========================================
+# Bỏ qua cơ sở dữ liệu tracking local (tránh conflict khi làm việc nhóm)
+mlflow.db
+# Bỏ qua thư mục lưu trữ artifact local (nếu MLflow tự tạo)
+mlruns/
+
+# ==========================================
+# 4. RÁC CỦA HỆ ĐIỀU HÀNH & EDITOR
+# ==========================================
+.DS_Store
+.vscode/
+.idea/
+
+# ==========================================
+# 5. DỮ LIỆU (Đã có DVC lo)
+# ==========================================
+# (Lưu ý: DVC thường tự tạo một file .gitignore riêng trong thư mục data/ 
+# nhưng cẩn thận thì cứ chặn các file media lọt ra ngoài)
+*.mp4
+*.avi
+*.jpg
+*.jpeg
+*.png
